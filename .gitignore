@@ -5,3 +5,8 @@ best-of-the-year/mvnw.cmd
 best-of-the-year/mvnw
 best-of-the-year/.mvn/wrapper/maven-wrapper.properties
 best-of-the-year/.gitattributes
+best-of-the-year/best-of-the-year/.gitattributes
+best-of-the-year/best-of-the-year/.mvn/wrapper/maven-wrapper.properties
+best-of-the-year/best-of-the-year/mvnw
+best-of-the-year/best-of-the-year/mvnw.cmd
+best-of-the-year/best-of-the-year/src/test/java/it/lessons/spring/BestOfTheYearApplicationTests.java
