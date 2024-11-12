@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -49,7 +50,7 @@ public class BestofTheYearController {
     }
     
     @GetMapping("/movies") 
-    public String showMovies(Model model) {
+    public String showMovies(@RequestParam(name = "name", required = false) String name, Model model) {
         List<Movie> movies = getBestMovies();
         StringBuilder titles = new StringBuilder();
 
@@ -59,14 +60,14 @@ public class BestofTheYearController {
             }
             titles.append(movie.getTitolo());
         }
-
+        model.addAttribute("name", name);
         model.addAttribute("titles", titles.toString());
         
         return "movies";
     }
     
     @GetMapping("/songs") 
-    public String showSongs(Model model) {
+    public String showSongs(@RequestParam(name = "name", required = false) String name, Model model) {
         List<Song> songs = getBestSongs();
         StringBuilder titles = new StringBuilder();
 
@@ -76,17 +77,10 @@ public class BestofTheYearController {
             }
             titles.append(song.getTitolo());
         }
-
+        model.addAttribute("name", name);
         model.addAttribute("titles", titles.toString());
         
         return "movies";
     }
     
-    @GetMapping ("/movies/{id}") 
-    public String idMovies (@RequestParam (name = "titolo", required = false) Model model) {
-    	
-    	
-    	return "idMovies";
-    }
-
 }

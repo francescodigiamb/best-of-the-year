@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"/>
+
 </head>
 <body>
-    <h1>Best of the year by <span th:text="${name}">[Name]</span></h1>
+	<div class="container"> 
+		<nav th:replace="~{navbar :: navbarhome}"></nav>
+    	<h1>Best of the year by <span th:text="${name}">[Name]</span></h1>
+		<!-- Bootstrap Bundle with Popper -->
+		<script th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
+	</div>
 </body>
 </html>
